@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>DWCC - Tarefa UD3 - Window</title>
+</head>
+<body>
+    <button id="close_popup">Cerrar POP UP</button>
+    <button id="mover_der">Mover POP UP -></button>
+    <button id="mover_izq">Mover POP UP <-</button>
+    <script>
+        const allowed = window.confirm("¿Desea abrir una nueva ventana?");
+        let ventana;
+
+        if(allowed){
+
+            ventana = window.open('Window_Popup.html', 'NuevaVentana', 'width=300,height=300,left=400,top=400,toolbar=no,menubar=no,alwaysRaised=yes');
+
+            const boton_cerrar = document.querySelector('#close_popup');
+            const boton_derecha = document.querySelector('#mover_der');
+            const boton_izquierda = document.querySelector('#mover_izq');
+
+            boton_cerrar.addEventListener("click", e => {
+
+                if (ventana && !ventana.closed){
+
+                    ventana.close();
+
+                }else alert("No se puede cerrar la nueva ventana porque no ha sido abierta!");  
+            });
+
+            boton_derecha.addEventListener("click", () => {
+
+                mover('derecha');
+            });
+
+            boton_izquierda.addEventListener("click", () => {
+
+                mover('izquierda');
+            });
+
+            setInterval(traerAlFrente, 100);
+
+            ventana.resizeBy(50, 50);
+            ventana.resizeTo(500, 500);
+
+        }else alert("Se ha cancelado apertura de la ventana emergente");
+            
+
+
+        //DECLARACIÓN FUNCIONES
+        function traerAlFrente(){
+
+            if(ventana && !ventana.closed){
+
+                ventana.focus();
+            }
+        }
+
+        function mover(direccion){
+
+            if(ventana && !ventana.closed){
+
+                if(direccion === "derecha"){
+
+                    ventana.moveBy(50, 0);
+                }
+                if(direccion === "izquierda"){
+                    
+                    ventana.moveTo((ventana.screenX || ventana.screenLeft) - 50, ventana.screenY || ventana.screenTop);
+                }                
+            }else alert("No se puede cerrar la nueva ventana porque no está abierta!");  
+        }
+    </script>
+</body>
+</html>

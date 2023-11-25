@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Tarefa UD03 - Date</title>
+
+</head>
+
+<body>
+
+    <header>
+        <h1>Tarefa UD03: Date -> Ver execucción en consola</h1>
+    </header>
+
+    <script src="DateCompilado.js"></script>
+    <script>
+    /*  //##### CODIGO JS ORIXINAL #####
+        //##### EJERCICIO 1 - DATE #####
+
+        function diasFinDeCurso() {
+
+            console.log("##### EJERCICIO 1 - DATE #####\n");
+
+            const dataActual = new Date();
+            const dataFinDeCurso = new Date(2024, 5, 25);
+            const tempoDiferencia = dataFinDeCurso - dataActual;
+            const diasDiferencia = Math.ceil(tempoDiferencia / (1000 * 60 * 60 * 24));
+
+            console.log(`Quedan ${diasDiferencia} días hasta final de curso.`);
+        }
+
+
+        //##### EJERCICIO 2 - DATE #####
+
+        function cumpleanosFinDeSemana() {
+
+            console.log("\n\n##### EJERCICIO 2 - DATE #####\n");
+
+            const cumpleanosStr = prompt("Introduce a data do teu cumpleanos(DD/MM):");
+
+            console.log(`\nA data introducida é: ${cumpleanosStr}`);
+
+            const arrayDiaMes = cumpleanosStr.split("/");
+
+            const dia = parseInt(arrayDiaMes[0]);
+            const mes = parseInt(arrayDiaMes[1]) - 1;
+
+            let cumpleanos = new Date(2023, mes, dia);
+            let anos = "";
+
+            for (let ano = new Date().getFullYear(); ano <= 2100; ano++) {
+
+                cumpleanos.setFullYear(ano);
+
+                if (cumpleanos.getDay() === 0 || cumpleanos.getDay() === 6) {
+                    anos = anos + ano + ", ";
+                }
+            }
+            console.log("O teu cumpleanos cadrará en fin de semana nos anos: " + anos);
+        }
+
+
+        //##### EJERCICIO 3 - DATE #####
+
+        function formatearFechaActual(formato) {
+
+            console.log("\n\n##### EJERCICIO 3 - DATE #####\n");
+
+            const fechaActual = new Date();
+            let fechaFormateada;
+
+            switch (formato) {
+
+                case 1:
+                    fechaFormateada = `${fechaActual.getDate()}/${fechaActual.getMonth() + 1}/${fechaActual.getFullYear()}`;
+                    break;
+
+                case 2:
+                    const diasSemanaESP = ['Domingo', 'Luns', 'Martes', 'Mércores', 'Xoves', 'Venres', 'Sábado'];
+                    const mesesESP = ['Xaneiro', 'Febreiro', 'Marzo', 'Abril', 'Maio', 'Xuño', 'Xullo', 'Agosto', 'Setembro', 'Outubro', 'Novembro', 'Decembro'];
+
+                    fechaFormateada = `${diasSemanaESP[fechaActual.getDay()]}, ${fechaActual.getDate()} de ${mesesESP[fechaActual.getMonth()]} de ${fechaActual.getFullYear()}`;
+                    break;
+
+                case 3:
+                    const diasSemanaENG = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+                    const mesesENG = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+
+                    fechaFormateada = `${diasSemanaENG[fechaActual.getDay()]}, ${mesesENG[fechaActual.getMonth()]} ${fechaActual.getDate()}, ${fechaActual.getFullYear()}`;
+                    break;
+
+                default:
+                    console.log("Non existe o formato introducido como parámetro");
+                    break;
+            }
+            console.log(fechaFormateada);
+        }
+
+
+        //##### EJERCICIO 4 - DATE #####
+
+        function formatearHoraActual(formato) {
+
+            console.log("\n\n##### EJERCICIO 4 - DATE #####\n");
+
+            const fechaActual = new Date();
+            let horaFormateada;
+
+            let horas = fechaActual.getHours();
+            let minutos = fechaActual.getMinutes();
+            let segundos = fechaActual.getSeconds();
+            let parteDia = "";
+
+            if(minutos < 10){minutos = '0' + minutos;}
+            if(segundos < 10){segundos = '0' + segundos;}       
+
+            switch (formato) {
+
+                case 1:
+                    horaFormateada = `${horas}:${minutos}:${segundos}`;
+                    break;
+
+                case 2:
+                    if(horas <= 12){
+                        parteDia = "AM";
+                    }else parteDia = "PM";
+                    horas = horas % 12 || 12;
+                    horaFormateada = `${horas}:${minutos} ${parteDia}`;
+                    break;
+
+                default:
+                    console.log("Non existe o formato introducido como parámetro");
+                    break;
+            }
+            console.log(horaFormateada);
+        }
+
+
+        //Llamada a la función de cada ejercicio
+        diasFinDeCurso();
+
+        cumpleanosFinDeSemana();
+
+        formatearFechaActual(1);
+        formatearFechaActual(2);
+        formatearFechaActual(3);
+
+        formatearHoraActual(1);
+        formatearHoraActual(2);
+        */
+    </script>
+
+</body>
+
+</html>

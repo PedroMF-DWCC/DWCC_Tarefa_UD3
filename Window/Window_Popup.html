@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>POP UP</title>
+</head>
+<body>
+    <h3>Exemplo de Ventá nova</h3>
+
+    <table id="tabla">
+
+    </table>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+
+            const url = window.location.href;
+            const protocolo = window.location.protocol;
+            const navegador = navigator.userAgent;
+            const javaActivado = navigator.javaEnabled();
+            const tablaInformacion = document.querySelector("#tabla");
+
+            tablaInformacion.innerHTML = 
+            `<tr>
+                <td>URL</td>
+                <td>${url}</td>
+            </tr>
+            <tr>
+                <td>Protocolo</td>
+                <td>${protocolo}</td>
+            </tr>
+            <tr>
+                <td>Navegador</td>
+                <td>${navegador}</td>
+            </tr>
+            <tr>
+                <td>Java Activado</td>
+                <td>${javaActivado ? 'Sí' : 'No'}</td>
+            </tr>`;
+            
+        });
+
+    </script>
+
+</body>
+</html>
